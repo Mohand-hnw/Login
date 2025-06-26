@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مهند حبيب الله</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+    body {
+      background-color: #0d0d0d;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      color: #fff;
+    }
+    header {
+      background-color: #334eac;
+      color: #f4efe6;
+      padding: 20px;
+      text-align: center;
+      width: 100%;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      width: 100%;
+    }
+    section {
+      background-color: #5e6c58;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      margin-bottom: 20px;
+      width: 320px;
+    }
+    p {
+      margin: 10px 0;
+    }
+    .form-container {
+      background: rgba(255,255,255,0.1);
+      padding: 30px;
+      border-radius: 15px;
+      width: 320px;
+      position: relative;
+    }
+    .input-box {
+      position: relative;
+      margin: 20px 0;
+    }
+    .input-box input {
+      width: 100%;
+      padding: 12px 10px;
+      font-size: 16px;
+      color: #fff;
+      background: none;
+      border: none;
+      border-bottom: 2px solid #555;
+      outline: none;
+    }
+    .input-box label {
+      position: absolute;
+      top: 12px;
+      left: 10px;
+      color: #aaa;
+      font-size: 16px;
+      pointer-events: none;
+      transition: 0.3s;
+    }
+    .input-box input:focus + label,
+    .input-box input:not(:placeholder-shown) + label {
+      top: -8px;
+      font-size: 12px;
+      color: #00ffff;
+    }
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(90deg, #00ffff, #00ff80);
+      border: none;
+      border-radius: 25px;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+    .submit-btn:hover {
+      background: linear-gradient(90deg, #00ff80, #00ffff);
+    }
+    .message {
+      margin-top: 15px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .error {
+      color: #ff4d4d;
+    }
+    .success {
+      color: #00d4ff;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      width: 100%;
+    }
+    
+    body {
+    background-color: #111;
+    color: #00ffcc;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding-top: 100px;
+    }
+    
+    h1 {
+    font-size: 40px;
+    }
+    
+    p {
+    margin-top: 20px;
+    font-size: 20px;
+    }
+    
+    .btn {
+    margin-top: 30px;
+    padding: 10px 25px;
+    background-color: #00ff80;
+    color: #000;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    }
+    
+    .btn:hover {
+    background-color: #00ffaa;
+    }
+  </style>
+</head>
+<body>
+
+  <header><h2>mohand hnw</h2></header>
+
+  <main>
+    <section>
+      <h2>مرحباً!</h2>
+      <p>أنا مهند حبيب الله، وهذا موقعي الرسمي</p>
+      <p>ادخل بيانات حسابك</p>
+    </section>
+
+    <div class="form-container">
+      <form onsubmit="handleLogin(); return false;">
+        <div class="input-box">
+          <input id="username" type="text" placeholder=" " required />
+          <label for="username">اسم المستخدم</label>
+        </div>
+
+        <div class="input-box">
+          <input id="password" type="password" placeholder=" " required />
+          <label for="password">كلمة المرور</label>
+        </div>
+
+        <button class="submit-btn" type="submit">دخول</button>
+        <div id="message" class="message"></div>
+      </form>
+    </div>
+  </main>
+
+  <footer>&copy; MOHAND HBIB ALLAH 2025</footer>
+
+  <script>
+    function handleLogin() {
+      const u = document.getElementById("username").value.trim();
+      const p = document.getElementById("password").value.trim();
+      const msg = document.getElementById("message");
+      const correctUsername = "Mohand";
+      const correctPassword = "12345";
+
+      if (!u || !p) {
+        msg.textContent = "الرجاء ملء جميع الحقول.";
+        msg.className = "message error";
+      } else if (u === correctUsername && p === correctPassword) {
+        msg.textContent = "✅ تم تسجيل الدخول، جارٍ التوجيه...";
+        msg.className = "message success";
+        setTimeout(() => {
+          window.location.href ="";
+        }, 1500);
+      } else {
+        msg.textContent = "❌ بيانات الدخول غير صحيحة.";
+        msg.className = "message error";
+      }
+    }
+  </script>
+
+</body>
+</html>
